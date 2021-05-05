@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { TextField } from '@fluentui/react';
 
-function Counter() {
-  const [count, setCount] = React.useState(0)
-  const increment = () => setCount(c => c + 1)
-  return <button onClick={increment}>{count}</button>
+function InputWithAlert() {
+  const [lostFocus, setLostFocus] = React.useState(false);
+  return (
+        <TextField label="Input with alert on blur" errorMessage={lostFocus ? "Something went wrong" : undefined} onBlur={() => setLostFocus(true)}/>
+  );
 }
 
-export default Counter
+export default InputWithAlert;
